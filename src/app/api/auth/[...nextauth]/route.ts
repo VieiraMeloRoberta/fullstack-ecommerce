@@ -1,7 +1,6 @@
-"use client";
+import NextAuth from "next-auth";
+import { authOptions } from "@/lib/auth";
 
-import { SessionProvider, SessionProviderProps } from "next-auth/react";
+const handler = NextAuth(authOptions);
 
-export const AuthProvider = ({ children }: SessionProviderProps) => {
-  return <SessionProvider>{children}</SessionProvider>;
-};
+export { handler as GET, handler as POST };
